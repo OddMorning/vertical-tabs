@@ -1,16 +1,23 @@
 {
-  "name": "vertical-tabs",
-  "main": "./lib/vertical-tabs",
-  "version": "1.0.5",
-  "description": "Make your tabs vertical",
+  "name": "vertical-tabs-plus",
+  "main": "./lib/vertical-tabs-plus",
+  "version": "1.0.0",
+  "description": "Makes tabs vertical. Fork from tiger4th's vertical-tabs package",
+  "styles": [
+    "./styles/main.less",
+    "./styles/themes.less"
+  ],
   "keywords": [
     "tab",
-    "vertical"
+    "tabs",
+    "vertical",
+    "over tree",
+    "over tree-view"
   ],
-  "repository": "https://github.com/tiger4th/vertical-tabs",
+  "repository": "https://github.com/OddMorning/vertical-tabs-plus",
   "license": "MIT",
   "engines": {
-    "atom": ">=1.0.0"
+    "atom": ">=1.17.0"
   },
   "dependencies": {}
 }

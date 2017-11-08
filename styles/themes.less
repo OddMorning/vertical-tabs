@@ -1,0 +1,74 @@
+@import "ui-variables";
+
+
+/*** One ***/
+.theme-one-light-ui,
+.theme-one-dark-ui {
+  .vertical-tabs-plus:not(.tree-view) {
+    .tab-bar .tab.active {
+       &, &:last-of-type {
+        box-shadow: inset 0 -1px 0 @tab-border-color;
+      }
+    }
+  }
+  .vertical-tabs-plus.tree-view {
+    .tab-bar .tab.active:not(.texteditor) {
+      // Восстановление фона вкладки настроек для tree-view
+      background-color: @tab-background-color-active;
+    }
+  }
+}
+   
+/*** Nord Atom ***/
+.theme-nord-atom-ui {
+  .tab-bar .tab {
+    .title,
+    .close-icon {
+      margin: 0;
+    }
+    
+    &:hover .close-icon {
+      margin-right: -4px;
+    }
+  }
+}
+
+
+/*** Atom Material ***/
+.theme-atom-material-ui {
+  .tab-bar {
+    max-height: none; // Atom Material устанавливает свою максимальную высоту, чем всё портит
+    .tab .title {
+       padding: 0; // Эта тема задаёт свои отступы из-за которых заголовок смещается чуть ниже
+     }
+     .tab.modified .close-icon {
+      margin-left: auto; // Чтобы крестик не наезжал на название файла
+    }
+  }
+}
+
+
+/* ------------------ */
+
+
+/*** Atom (classic) ***/
+.theme-atom-light-ui,
+.theme-atom-dark-ui {
+  .vertical .tab-bar {
+    padding-left: 0;
+    .tab::before, .tab::after {
+      content: none;
+    }
+  }
+}
+
+/*** Apex ***/
+.theme-apex-ui {
+  .tab-bar {
+    padding-top: 16px;
+    border-left: none;
+    .tab {
+      box-shadow: none;
+    }
+  }
+}

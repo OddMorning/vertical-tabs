@@ -1,47 +1,11 @@
-## 1.0.5
-* Dock fix for Atom 1.17.0
+## 1.0.0 (08 Nov 2017)
+* Completely rewritten styles and code, still based on the original tiger4th's package;
+* Corrected small interface flaws like weird space between tabs, 1px shift when dragging tabs, missing left border for a first tab, double borders in other places and so on;
+* Added an ability to switch tabs by scrolling (inspired by the same named option of the Vivaldi browser);
+* Tabs can be placed over the projects folders (a.k.a. tree view). It's still beta so there can be bugs (like descriebed);
+* Works best with the default theme (One Light/Dark) but should work with other themes too. Is tested with [https://atom.io/themes/nord-atom-ui](Nord) and [https://atom.io/themes/atom-material-ui](Material) themes;
+* It's the first release of this forked package so there still can be bugs and flaws.
 
-## 1.0.4
-* Show drop location indicator
-
-## 1.0.3
-* Show scrollbar
-
-## 1.0.2
-* Republishing
-
-## 1.0.1
-* Resolve conflicts with some themes
-
-## 1.0.0
-* Add tab position and tab width setting
-
-## 0.4.3
-* Fix scrollable Tabs
-
-## 0.4.2
-* Scrollable Tabs
-
-## 0.4.1
-* Refactoring
-
-## 0.4.0
-* Autostart
-
-## 0.3.1
-* Update README
-
-## 0.3.0
-* Add keyboard shortcut
-
-## 0.2.2
-* Update README
-
-## 0.2.1
-* Fix menu
-
-## 0.2.0
-* Add menu
-
-## 0.1.0 - First Release
-* test
+Known bugs:
+* Some special tabs like Settings or About can't be moved when the `Over tree view` tabs placement is chosen. Instead or sorting, tab just docks near the tree view (other tabs don't have that problem since they can't be docked). Currently I have no idea how to fix that but you can press `Esc` if you accidentally dragged the tab and didn't release mouse button yet.
+* Tab switching with scrolling doesn't work when the main pane (e.g. code editor) isn't focused.
