@@ -28,7 +28,7 @@
   // Левосторонние вкладки
   &[data-tabs-position="left"] {
     flex-direction: row;
-    .wrapper {
+    .vtabs-wrapper {
       // Добавляет границу, отделяющую вкладки от основного окна
       border-right: 1px solid @tab-border-color;
     }
@@ -36,17 +36,26 @@
   // И правосторонние вкладки
   &[data-tabs-position="right"] {
     flex-direction: row-reverse; 
-    .wrapper {
+    .vtabs-wrapper {
       border-left: 1px solid @tab-border-color;
     }
   }
   
-  // Контейнер вкладок, когда сбоку
-  &.tree-view .tab-bar {
-    padding: .5em 0;
-    .tab {
-      // Убирает линии между вкладками
-      box-shadow: none;
+  // Вкладои, когда сбоку
+  &.tree-view {
+    // Чтобы вкладки не скроллились вместе с деревом
+    overflow: hidden;
+    .tree-view-root {
+      overflow: auto;
+    }
+
+    // Контейнер вкладок
+    .tab-bar {
+      padding: .5em 0;
+      .tab {
+        // Убирает линии между вкладками
+        box-shadow: none;
+      }
     }
   }
   // Контейнер вкладок, когда не сбоку
@@ -55,8 +64,9 @@
     max-width: var(--max-tab-width);
   }
   
-  .wrapper {
+  .vtabs-wrapper {
     overflow-y: auto;
+    flex-shrink: 0; 
   }
 
   // Контейнер вкладок

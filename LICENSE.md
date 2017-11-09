@@ -1,4 +1,4 @@
-Copyright © 2016 tiger4th, fork © 2017 OddMorning
+﻿Copyright © 2016 tiger4th, fork © 2017 OddMorning
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
