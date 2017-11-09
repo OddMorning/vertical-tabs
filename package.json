@@ -1,7 +1,7 @@
 {
   "name": "vertical-tabs-plus",
   "main": "./lib/vertical-tabs-plus",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Makes tabs vertical. Fork from tiger4th's vertical-tabs package",
   "styles": [
     "./styles/main.less",
@@ -10,6 +10,7 @@
   "keywords": [
     "tab",
     "tabs",
+    "scroll",
     "vertical",
     "over tree",
     "over tree-view"
@@ -19,5 +20,7 @@
   "engines": {
     "atom": ">=1.17.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tabs": ">=0.0.0"
+  }
 }
