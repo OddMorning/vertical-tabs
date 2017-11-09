@@ -1,7 +1,7 @@
 {
   "name": "vertical-tabs-plus",
   "main": "./lib/vertical-tabs-plus",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "description": "Makes tabs vertical. Fork from tiger4th's vertical-tabs package",
   "styles": [
     "./styles/main.less",
