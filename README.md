@@ -25,6 +25,13 @@ The difference from the original package:
 * Customizable tab height;
 * Extra features.
 
+## Why 2.0.0, not 0.1.0?
+Because:
+```
+npm ERR! Command failed: git -c core.longpaths=true tag v0.1.0 -am Prepare 0.1.0 release
+npm ERR! fatal: tag 'v0.1.0' already exists
+```
+
 ## Screenshots
 ![](https://github.com/OddMorning/vertical-tabs-plus/raw/master/screenshots/left.png)
 ![](https://github.com/OddMorning/vertical-tabs-plus/raw/master/screenshots/right.png)
