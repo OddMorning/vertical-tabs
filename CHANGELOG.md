@@ -1,6 +1,16 @@
+# Changelog
+
+## 2.2.0 (10 Nov 2017)
+* Fixed package crash when a new window opened with the `Over tree view` tabs placement chosen (tabs may blink while waiting for the project tree pane since it's hidden in new windows by default);
+* Fixed problems with scrolling when tabs don't fit the screen and switching tabs by scrolling option is enabled;
+* Tabs don't displace project tree when there are too many tabs (they can take 60% of height by default, can be changed in settings).
+
+## 2.1.1 (09 Nov 2017)
+* Added scrollbar for tabs when they don't fit the screen.
+
 ## 2.1.0 (09 Nov 2017)
 * Added an ability to customize tab height and intends manually;
-* Fixed bugs with shrinking tabs down to 0px with the `Over tree view` tabs placement.
+* Fixed bugs with shrinking tabs down to 0px with the `Over tree view` tabs placement chosen.
 
 ## 2.0.0 (08 Nov 2017)
 * Completely rewritten styles and code, still based on the original tiger4th's package;

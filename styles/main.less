@@ -6,6 +6,7 @@
   --tab-height: 3em;
   --min-tab-width: 11em;
   --max-tab-width: 14.1em;
+  --max-tab-container-height: 60%;
   --tab-padding-multiplier: 4;
   
   // // Позволяет занимать всё свободное место сверху донизу
@@ -41,12 +42,17 @@
     }
   }
   
-  // Вкладои, когда сбоку
+  // Вкладки, когда сбоку
   &.tree-view {
     // Чтобы вкладки не скроллились вместе с деревом
     overflow: hidden;
     .tree-view-root {
       overflow: auto;
+    }
+
+    // Чтобы вкладки не выедали всё место, выпихивая проект за пределы окна
+    .vtabs-wrapper {
+      max-height: var(--max-tab-container-height);
     }
 
     // Контейнер вкладок
