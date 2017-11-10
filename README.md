@@ -19,14 +19,14 @@ Originally I had a bunch of custom styles that were fixing weird things in the o
 There are too many changes for a single pull request but it's still based on the tiger4th's package so I decided to fork it. Well, people fork projects for purposes like this so why not?
 
 The difference from the original package:
-* Works well with "Material" theme, other themes shouldn't break it either (at the time of development is tested with "One", "Nord", and "Material");
+* Works well with "Material" theme, other themes shouldn't break it either (at the time of development is tested with "[One](https://atom.io/themes/one-light-ui)", "[Nord](https://atom.io/themes/nord-atom-ui)", and "[Material](https://atom.io/themes/atom-material-ui)");
 * No missing or extra borders (in case if you care about interface up to 1px lines);
 * Replaced fixed tabs width with `min` and `max` values;
 * Customizable tab height;
 * Extra features.
 
 ## Why 2.0.0, not 0.1.0?
-Because it turned out that I can't use versions that used to be in the original package:
+Because it's a forked project and versions up to 1.0.5 are already taken by the original package:
 ```
 npm ERR! Command failed: git -c core.longpaths=true tag v0.1.0 -am Prepare 0.1.0 release
 npm ERR! fatal: tag 'v0.1.0' already exists

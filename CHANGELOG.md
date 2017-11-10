@@ -6,7 +6,7 @@
 * Completely rewritten styles and code, still based on the original tiger4th's package;
 * Corrected small interface flaws like weird space between tabs, 1px shift when dragging tabs, missing left border for a first tab, double borders in other places and so on;
 * Added an ability to switch tabs by scrolling (inspired by the same named option of the Vivaldi browser);
-* Tabs can be placed over the projects folders (a.k.a. tree view). It's still beta so there can be bugs (like descriebed);
+* Tabs can be placed over the projects folders (a.k.a. tree view). It's still beta so there can be bugs (like described below);
 * Works best with the default theme (One Light/Dark) but should work with other themes too. Is tested with [Nord](https://atom.io/themes/nord-atom-ui) and [Material](https://atom.io/themes/atom-material-ui) themes;
 * It's the first release of this forked package so there still can be bugs and flaws.
 
