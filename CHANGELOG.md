@@ -1,11 +1,16 @@
 # Changelog
 
+#### 2.3.0-nightly (13 Nov 2017)
+* Settings are grouped now. Due to that they all are resetted to the default values but they're not lost, Atom still shows old values in the package settings so they can be restored manually.
+* Small fixes and internal changes
+* [More soon]
+
 ## 2.2.0 (10 Nov 2017)
 * Fixed package crash when a new window opened with the `Over tree view` tabs placement chosen (tabs may blink while waiting for the project tree pane since it's hidden in new windows by default);
 * Fixed problems with scrolling when tabs don't fit the screen and switching tabs by scrolling option is enabled;
 * Tabs don't displace project tree when there are too many tabs (they can take 60% of height by default, can be changed in settings).
 
-## 2.1.1 (09 Nov 2017)
+#### 2.1.1 (09 Nov 2017)
 * Added scrollbar for tabs when they don't fit the screen.
 
 ## 2.1.0 (09 Nov 2017)

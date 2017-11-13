@@ -2,39 +2,22 @@
 @import "ui-variables";
  
 .vertical-tabs-plus {
-  // Настройки по умолчанию
+  // Default settings
   --tab-height: 3em;
   --min-tab-width: 11em;
   --max-tab-width: 14.1em;
   --max-tab-container-height: 60%;
   --tab-padding-multiplier: 4;
-  
-  // // Позволяет занимать всё свободное место сверху донизу
-  // .greedy-tabs .tab-bar {
-  //   display: flex;
-  //   flex-direction: column;
-  //   height: 100%;
-  //   width: 100%;
-  //   .tab:last-child,
-  //   .tab.active:last-child {
-  //     box-shadow: none;
-  //   }
-  // }
-  // // Для вкладок над деревом
-  // &.tree-view .greedy-tabs {
-  //   height: 100%;
-  //   display: flex;
-  // }
 
-  // Левосторонние вкладки
+  // Left sided tabs
   &[data-tabs-position="left"] {
     flex-direction: row;
     .vtabs-wrapper {
-      // Добавляет границу, отделяющую вкладки от основного окна
+      // Separator between code pane and tabs container
       border-right: 1px solid @tab-border-color;
     }
   }
-  // И правосторонние вкладки
+  // Right sided tabs
   &[data-tabs-position="right"] {
     flex-direction: row-reverse; 
     .vtabs-wrapper {
@@ -42,90 +25,90 @@
     }
   }
   
-  // Вкладки, когда сбоку
+  // When tabs are placed over tree-view
   &.tree-view {
-    // Чтобы вкладки не скроллились вместе с деревом
+    // Not to make them scroll with tree-view together
     overflow: hidden;
     .tree-view-root {
       overflow: auto;
     }
 
-    // Чтобы вкладки не выедали всё место, выпихивая проект за пределы окна
+    // Limiting tab container height not to make tabs take all the space
     .vtabs-wrapper {
       max-height: var(--max-tab-container-height);
     }
 
-    // Контейнер вкладок
+    // Tab container
     .tab-bar {
       padding: .5em 0;
       .tab {
-        // Убирает линии между вкладками
+        // Removes lines between tabs
         box-shadow: none;
       }
     }
   }
-  // Контейнер вкладок, когда не сбоку
+  // Tab container when isn't over tree-view
   &:not(.tree-view) .tab-bar {
     min-width: var(--min-tab-width);
     max-width: var(--max-tab-width);
   }
   
+  // Um... This is something important too :D
   .vtabs-wrapper {
     overflow-y: auto;
     flex-shrink: 0; 
   }
 
-  // Контейнер вкладок
+  // Tab container
   .tab-bar {
-    height: auto; // Растягивает контейнер на всю высоту окна
-    display: block; // block перекрывает flex, заодно не давая вкладкам растягиваться на всю ширину/высоту. Можно похимичить с flex-свойствами но такой необходимости пока нет.
+    height: auto; // Stretches tab container to the height of the window
+    display: block; // "block" overrides "flex" and makes them look better. It's possible to just set some flex-propreties but it already works well with "block"
+    box-shadow: none; // Removes ugly lines under tab container. It's an ex-separator between tabs and code pane, used to work with horizontal tabs
 
-    
-    box-shadow: none; // Убирает неактуальную (и просто некрасивую) полосу снизу всего блока вкладок. Для вкладок сверху эта полоса проходит снизу, но теперь она должна проходить сбоку, поэтому боковая отрисовывается кодом ниже.
-
-    // Сами вкладки
+    // Tabs themselves
     .tab {
-      // Чтобы у настроек ширины и высоты не было лимитов
+      // No limits set by themes
       min-width: initial;
       max-width: none;
     
-      border-left: none; // Граница первой вкладки слева отключена встроенными стилями + если вкладки расположены слева, то граница «удваивается», поэтому они будут отрисованы по новой чуть дальше.
-      width: 100%; // Антискукоживатель вкладок :D
+      border-left: none; // A separator between tabs, is actual for horizontal tabs only.
+      width: 100%; // Tab antishrinker :D
+      box-shadow: inset 0 -1px 0 @tab-border-color; // Originally tabs do "box-shadow: inherit" which inherits tab separator that's disabled (and explained why) above so getting it back manually.
       
-      // В оригинале вкладки делают box-shadow: inherit, а тень контейнера в этом стиле отключена (выше описано почему), поэтому полоса-разделитель между вкладками возвращается вручную.
-      box-shadow: inset 0 -1px 0 @tab-border-color;
-      
-      // Установка любой высоты вкладок ценой невозможности наследовать значение из темы.
-      // Зато теперь есть идеальное центрирование заголовка, кнопки закрытия и кружочка.
+      // Customizable tab height + perfect title and "X" centering
       height: var(--tab-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
       .title {
-        text-align: left; // Выравнивание заголовков вкладок по левому краю
+        text-align: left; // Aligning tab title to the left side
         margin: 0 ~'calc(var(--tab-height) / var(--tab-padding-multiplier))';
       }
-      // Выравнивание иконок по центру вкладки
+      // Vertical tab align
       .icon::before {
         vertical-align: initial !important;
       }
       .close-icon {
-        position: static; // Анти ablosute, чтобы и крестик центрировался тоже сам, а не «магическими числами»
-        margin-right: ~'calc(var(--tab-height) / var(--tab-padding-multiplier))'; // Методом тыка обнаружено, что в оригинале отступы в 4 раза меньше высоты вкладки…
-        margin-left: ~'calc(var(--tab-height) / 2 * -1)'; // …а крестик занимает вот примерно столько :D Это тоже последствия анти ablosute, которые я бы не сказал что намного лучше магических чисел, но плюсов от этого метода пока что всё равно больше.
+        position: static; // Anti ablosute to make "X" centering itself, not with "magic numbers".
+        margin-right: ~'calc(var(--tab-height) / var(--tab-padding-multiplier))'; // Actually, this is some kind of magic number. "One" theme had intends that are 1/4 of tab height so "--tab-padding-multiplier" is 4 by default.
+        margin-left: ~'calc(var(--tab-height) / 2 * -1)'; // Another magic thing. Looks creepy.
         &::before {
-          vertical-align: 0; // В оригинале кнопка смещается на -0.05em, оно просто сдвигает крестик вниз и обводка при наведении мыши выглядит смещённой. Уж не знаю почему так и из-за моего ли вмешательства, но тут смещение обнуляется и всё становится хорошо.
+          vertical-align: 0; // Originally it's equal to -0.05em which shifts "X" down and makes everything look ugly. I dunno why and if is it my fault but it's resetting here and everything gets good.
         }
       }
     }
-    // Полоса, которая появляется, когда перетаскиваешь вкладки
+    // A line that appears when you drag tabs
     .placeholder {
-      display: block; // Без этого перемещать вкладки практически невозможно, они начинают сильно скакать и вообще всё становится очень плохо
-      height: 1px; // А без этого placeholder становится высотой с целую вкладку
-      margin-top: -1px; // «Антиматерия» свойству height, чтобы вкладки не дёргались на 1 пиксель при перемещении
+      // Dealing with default styles of tree-view package
+      left: 0;
+      width: 100%;
+    
+      display: block; // It's almost impossible to drag tabs, they twitch without it.
+      height: 1px; // And this makes placeholder tiny and beautiful, not huge and clumsy
+      margin-top: -1px; // "Antimatter" to height property, not to make tabs twitch by 1px
 
       &::before, &::after {
-        display: none; // Такая штука слева у вкладки, с вертикальными вкладками она смотрится некрасиво и вообще не актуальна
+        display: none; // A thing on the left tab side, it looks bad with vertical tabs
       }
     }
   }
