@@ -1,6 +1,5 @@
 @import "ui-variables";
 
-
 /*** One ***/
 .theme-one-light-ui,
 .theme-one-dark-ui {
@@ -12,8 +11,12 @@
     }
   }
   .vertical-tabs-plus.tree-view {
+    // Removes a line on the left side of tabs since it doesn't fit style and doesn't work with tree view
+    &::before {
+      content: none;
+    }
     .tab-bar .tab.active:not(.texteditor) {
-      // Восстановление фона вкладки настроек для tree-view
+      // Docks remove tab background and this line gets it back
       background-color: @tab-background-color-active;
     }
   }
@@ -38,12 +41,12 @@
 /*** Atom Material ***/
 .theme-atom-material-ui {
   .tab-bar {
-    max-height: none; // Atom Material устанавливает свою максимальную высоту, чем всё портит
+    max-height: none; // Atom Material sets its own max height which spoils everything
     .tab .title {
-       padding: 0; // Эта тема задаёт свои отступы из-за которых заголовок смещается чуть ниже
+       padding: 0; // This theme sets its own padding that shifts titles down
      }
      .tab.modified .close-icon {
-      margin-left: auto; // Чтобы крестик не наезжал на название файла
+      margin-left: auto; // Not to make "X" cover filename
     }
   }
 }
