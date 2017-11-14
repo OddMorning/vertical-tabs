@@ -1,7 +1,10 @@
 # Changelog
 
-#### 2.3.0 (14 Nov 2017)
-* Settings are grouped now. Due to that they all are resetted to the default values but they're not lost, Atom still shows old values in the package settings so they can be restored manually;
+#### 2.3.1-nightly (14 Nov 2017)
+* `Tab scroll` is fixed and works right independently on focused pane.
+
+## 2.3.0 (14 Nov 2017)
+* Redesigned settings menu, options are grouped now;
 * Small fixes and internal changes;
 * Added an experimental ability to fix tooltip placement. By default it's displayed below tabs that doesn't look right for vertical tabs and this option moves tooltips to the right of the tab instead of below it (or to the left when the tabs are on the right side). This option is experimental and not really stable because there\'s no way to inject into the "tabs" package and change behaivor of tooltips so it tries to intercept tooltips before they\'re displayed instead. This is the best way that I could think of. Tooltips still appear below tabs if you move cursor too quick before they were displayed for the first time.  
 The idea [is suggested by kreba](https://github.com/tiger4th/vertical-tabs/issues/19).
@@ -22,11 +25,14 @@ The idea [is suggested by kreba](https://github.com/tiger4th/vertical-tabs/issue
 * Completely rewritten styles and code, still based on the original tiger4th's package;
 * Corrected small interface flaws like weird space between tabs, 1px shift when dragging tabs, missing left border for a first tab, double borders in other places and so on;
 * Added an ability to switch tabs by scrolling (inspired by the same named option of the Vivaldi browser);
-* Tabs can be placed over the projects folders (a.k.a. tree view). It's still beta so there can be bugs (like described below);
+* Tabs can be placed over the projects folders (a.k.a. tree view). It's still beta so there can be bugs;
 * Works best with the default theme (One Light/Dark) but should work with other themes too. Is tested with [Nord](https://atom.io/themes/nord-atom-ui) and [Material](https://atom.io/themes/atom-material-ui) themes;
 * It's the first release of this forked package so there still can be bugs and flaws.
 
-### Known bugs:
-* Some special tabs like Settings or About can't be moved when the `Over tree view` tabs placement is chosen. Instead or sorting, tab just docks near the tree view (other tabs don't have that problem since they can't be docked). Currently I have no idea how to fix that but you can press `Esc` if you accidentally dragged the tab and didn't release mouse button yet.
-* Tab switching with scrolling doesn't work when the main pane (e.g. code editor) isn't focused.
+#### 0.1.0 – 1.0.5
+* Original package development by tiger4th, the changelog is [available on GitHub](https://github.com/tiger4th/vertical-tabs/blob/v1.0.5/CHANGELOG.md)
 
+### Known bugs:
+* Some special tabs like Settings or About can't be moved and sorted when the `Over tree view` tabs placement is chosen. Instead or sorting, tab just docks near the tree view (other tabs don't have that problem since they can't be docked). Currently I have no idea how to fix that but you can press `Esc` if you accidentally dragged the tab and didn't release a mouse button yet.
+* When `Fix Tooltips Placement` is enabled, tooltips still can be displayed once at the old position when you quickly move the cursor over new tabs.
+* Tabs work just for one pane, they stay horizontal with splitted panes. I have no idea how to handle that case so this is not really a bug.

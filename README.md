@@ -32,6 +32,9 @@ npm ERR! Command failed: git -c core.longpaths=true tag v0.1.0 -am Prepare 0.1.0
 npm ERR! fatal: tag 'v0.1.0' already exists
 ```
 
+## Changelog and known bugs
+are available in [CHANGELOG.md](./CHANGELOG.md)
+
 ## Screenshots
 Tabs on the left side:
 ![](https://github.com/OddMorning/vertical-tabs-plus/raw/master/screenshots/left.png)
