@@ -1,11 +1,8 @@
 # Changelog
 
-#### 2.3.1-nightly.1 (19 Nov 2017)
-* Added support of multiple panes. Will be improved to handle different cases different ways;
-* `Tab scroll` works smoother.
-
-#### 2.3.1-nightly (14 Nov 2017)
-* `Tab scroll` option is fixed and works right independently on focused pane;
+#### 2.3.1 (19 Nov 2017)
+* Added support of multiple panes. Will be improved later;
+* `Tab scroll` option is fixed and works right independently on focused pane. It also works smoother;
 * Fixed some problems with `Fix Tooltips Placement` option.
 
 ## 2.3.0 (14 Nov 2017)
