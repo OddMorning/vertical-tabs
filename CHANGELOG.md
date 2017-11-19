@@ -1,7 +1,12 @@
 # Changelog
 
+#### 2.3.1-nightly.1 (19 Nov 2017)
+* Added support of multiple panes. Will be improved to handle different cases different ways;
+* `Tab scroll` works smoother.
+
 #### 2.3.1-nightly (14 Nov 2017)
-* `Tab scroll` is fixed and works right independently on focused pane.
+* `Tab scroll` option is fixed and works right independently on focused pane;
+* Fixed some problems with `Fix Tooltips Placement` option.
 
 ## 2.3.0 (14 Nov 2017)
 * Redesigned settings menu, options are grouped now;
@@ -29,10 +34,5 @@ The idea [is suggested by kreba](https://github.com/tiger4th/vertical-tabs/issue
 * Works best with the default theme (One Light/Dark) but should work with other themes too. Is tested with [Nord](https://atom.io/themes/nord-atom-ui) and [Material](https://atom.io/themes/atom-material-ui) themes;
 * It's the first release of this forked package so there still can be bugs and flaws.
 
-#### 0.1.0 – 1.0.5
+#### 0.1.0 - 1.0.5
 * Original package development by tiger4th, the changelog is [available on GitHub](https://github.com/tiger4th/vertical-tabs/blob/v1.0.5/CHANGELOG.md)
-
-### Known bugs:
-* Some special tabs like Settings or About can't be moved and sorted when the `Over tree view` tabs placement is chosen. Instead or sorting, tab just docks near the tree view (other tabs don't have that problem since they can't be docked). Currently I have no idea how to fix that but you can press `Esc` if you accidentally dragged the tab and didn't release a mouse button yet.
-* When `Fix Tooltips Placement` is enabled, tooltips still can be displayed once at the old position when you quickly move the cursor over new tabs.
-* Tabs work just for one pane, they stay horizontal with splitted panes. I have no idea how to handle that case so this is not really a bug.

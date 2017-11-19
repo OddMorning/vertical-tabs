@@ -32,8 +32,9 @@ npm ERR! Command failed: git -c core.longpaths=true tag v0.1.0 -am Prepare 0.1.0
 npm ERR! fatal: tag 'v0.1.0' already exists
 ```
 
-## Changelog and known bugs
-are available in [CHANGELOG.md](./CHANGELOG.md)
+### Known bugs:
+* Some special tabs like Settings or About can't be moved and sorted when the `Over tree view` tabs placement is chosen. Instead of sorting, tab just docks near the tree view (other tabs don't have that problem since they can't be docked). Currently I have no idea how to fix that but you can press `Esc` if you accidentally dragged the tab and didn't release a mouse button yet.
+* When `Fix Tooltips Placement` is enabled, tooltips still can be displayed at the old position when you quickly move the cursor over new tabs. That's because they display too quick, right before this package changes their placement value from `bottom` to `left` or `right`.
 
 ## Screenshots
 Tabs on the left side:
