@@ -36,6 +36,11 @@
     // Limiting tab container height not to make tabs take all the space
     .vtabs-wrapper {
       max-height: var(--max-tab-container-height);
+      
+      // A separator between tab containers (when window has splitted panes)
+      + .vtabs-wrapper {
+        border-top: 1px solid @tab-border-color;
+      }
     }
 
     // Tab container
