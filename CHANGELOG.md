@@ -1,9 +1,13 @@
 # Changelog
 
+#### 2.3.2 (21 Nov 2017)
+* The `Over project tree` tab position is stable now, tabs like Settings or Diagnostics can be moved and sorted safely as they won't try to dock anymore;
+* The close button doesn't become narrow when tab has long title.
+
 #### 2.3.1 (19 Nov 2017)
 * Added support of multiple panes. Will be improved later;
-* `Tab scroll` option is fixed and works right independently on focused pane. It also works smoother;
-* Fixed some problems with `Fix Tooltips Placement` option.
+* The `Tab scroll` option works right independently on focused pane. It also should scroll smoother;
+* Some tabs didn't show tooltips properly with `Fix Tooltips Placement` option enabled.
 
 ## 2.3.0 (14 Nov 2017)
 * Redesigned settings menu, options are grouped now;
@@ -12,7 +16,7 @@
 The idea [is suggested by kreba](https://github.com/tiger4th/vertical-tabs/issues/19).
 
 ## 2.2.0 (10 Nov 2017)
-* Fixed package crash when a new window opened with the `Over tree view` tabs placement chosen (tabs may blink while waiting for the project tree pane since it's hidden in new windows by default);
+* Fixed package crash when a new window opened with the `Over project tree` tabs placement chosen (tabs may blink while waiting for the project tree pane since it's hidden in new windows by default);
 * Fixed problems with scrolling when tabs don't fit the screen and switching tabs by scrolling option is enabled;
 * Tabs don't displace project tree when there are too many tabs (they can take 60% of height by default, can be changed in settings).
 
@@ -21,7 +25,7 @@ The idea [is suggested by kreba](https://github.com/tiger4th/vertical-tabs/issue
 
 ## 2.1.0 (09 Nov 2017)
 * Added an ability to customize tab height and intends manually;
-* Fixed bugs with shrinking tabs down to 0px with the `Over tree view` tabs placement chosen.
+* Fixed bugs with shrinking tabs down to 0px with the `Over project tree` tabs placement chosen.
 
 ## 2.0.0 (08 Nov 2017)
 * Completely rewritten styles and code, still based on the original tiger4th's package;

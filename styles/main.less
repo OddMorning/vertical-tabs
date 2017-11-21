@@ -32,6 +32,11 @@
     .tree-view-root {
       overflow: auto;
     }
+    
+    // Fix for tree view emulation (is used when special tabs are dragged)
+    &.tree-view-emulation {
+      overflow: visible;
+    }
 
     // Limiting tab container height not to make tabs take all the space
     .vtabs-wrapper {
@@ -96,7 +101,8 @@
       .close-icon {
         position: static; // Anti ablosute to make "X" centering itself, not with "magic numbers".
         margin-right: ~'calc(var(--tab-height) / var(--tab-padding-multiplier))'; // Actually, this is some kind of magic number. "One" theme had intends that are 1/4 of tab height so "--tab-padding-multiplier" is 4 by default.
-        margin-left: ~'calc(var(--tab-height) / 2 * -1)'; // Another magic thing. Looks creepy.
+        margin-left: ~'calc(var(--tab-height) / 2 * -1)'; // Another magic thing. Looks weird.
+        flex-shrink: 0; // Sometimes long titles make "X" narrow and this line fixes it.
         &::before {
           vertical-align: 0; // Originally it's equal to -0.05em which shifts "X" down and makes everything look ugly. I dunno why and if is it my fault but it's resetting here and everything gets good.
         }
