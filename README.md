@@ -6,7 +6,7 @@ Makes tabs vertical. Fork from tiger4th's vertical-tabs package.
 ### Switch tabs by scrolling
 Move cursor over tabs and switch between them using scroll wheel. Inspired by the same named option of the Vivaldi browser.
 
-### Tabs placement: left, right, above tree view
+### Tabs placement: left, right, above project tree
 Tabs can be placed on either left or right side of the main pane. It's also possible to shelter them above the project tree view not to waste much space (inspired by Adobe Brackets interface).
 
 ### Customizable tab width and height
