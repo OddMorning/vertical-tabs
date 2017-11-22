@@ -75,6 +75,11 @@
     display: block; // "block" overrides "flex" and makes them look better. It's possible to just set some flex-propreties but it already works well with "block"
     box-shadow: none; // Removes ugly lines under tab container. It's an ex-separator between tabs and code pane, used to work with horizontal tabs
 
+    // Fixed vertical tab align for tabs with stock icons.
+    // A rough fix for file-icons package
+    .tab:not(.texteditor) .icon::before {
+      vertical-align: initial !important;
+    }
     // Tabs themselves
     .tab {
       // No limits set by themes
@@ -93,10 +98,6 @@
       .title {
         text-align: left; // Aligning tab title to the left side
         margin: 0 ~'calc(var(--tab-height) / var(--tab-padding-multiplier))';
-      }
-      // Vertical tab align
-      .icon::before {
-        vertical-align: initial !important;
       }
       .close-icon {
         position: static; // Anti ablosute to make "X" centering itself, not with "magic numbers".

@@ -1,31 +1,35 @@
 # Changelog
 
+#### 2.3.3 (22 Nov 2017)
+* **Improved:** `Fix Tooltips Placement` doesn't show tooltips in wrong direction. This option looks more or less stable now;
+* **Improved:** Better changelog design.
+
 #### 2.3.2 (21 Nov 2017)
-* The `Over project tree` tab position is stable now, tabs like Settings or Diagnostics can be moved and sorted safely as they won't try to dock anymore;
-* The close button doesn't become narrow when tab has long title.
+* **Improved:** The `Over project tree` tab position is stable now, tabs like Settings or Diagnostics can be moved and sorted safely as they won't try to dock anymore;
+* **Fixed:** The close button became narrow when tab has long title.
 
 #### 2.3.1 (19 Nov 2017)
-* Added support of multiple panes. Will be improved later;
-* The `Tab scroll` option works right independently on focused pane. It also should scroll smoother;
-* Some tabs didn't show tooltips properly with `Fix Tooltips Placement` option enabled.
+* **Improved:** The `Tab scroll` option is stable and works independently on focused pane;
+* **Fixed:** Multiple panes are supported now. They were supported in the original package so technically it's just a bug fix;
+* **Fixed:** Some tabs didn't show tooltips properly with `Fix Tooltips Placement` option enabled.
 
 ## 2.3.0 (14 Nov 2017)
-* Redesigned settings menu, options are grouped now;
-* Small fixes and internal changes;
-* Added an experimental ability to fix tooltip placement. By default it's displayed below tabs that doesn't look right for vertical tabs and this option moves tooltips to the right of the tab instead of below it (or to the left when the tabs are on the right side). This option is experimental and not really stable because there\'s no way to inject into the "tabs" package and change behaivor of tooltips so it tries to intercept tooltips before they\'re displayed instead. This is the best way that I could think of. Tooltips still appear below tabs if you move cursor too quick before they were displayed for the first time.  
+* **Improved:** Redesigned settings menu, options are grouped now;
+* **Fixed** some trifles, internal changes;
+* **Added** an experimental ability to fix tooltip placement. By default it's displayed below tabs that doesn't look right for vertical tabs and this option moves tooltips to the right of the tab instead of below it (or to the left when the tabs are on the right side). This option is experimental and not really stable because there's no way to inject into the "tabs" package and change behaivor of tooltips so it tries to intercept tooltips before they're displayed instead. This is the best way that I could think of. Tooltips still appear below tabs if you move cursor too quick before they were displayed for the first time.  
 The idea [is suggested by kreba](https://github.com/tiger4th/vertical-tabs/issues/19).
 
 ## 2.2.0 (10 Nov 2017)
-* Fixed package crash when a new window opened with the `Over project tree` tabs placement chosen (tabs may blink while waiting for the project tree pane since it's hidden in new windows by default);
-* Fixed problems with scrolling when tabs don't fit the screen and switching tabs by scrolling option is enabled;
-* Tabs don't displace project tree when there are too many tabs (they can take 60% of height by default, can be changed in settings).
+* **Added** a new option to control how much space tabs can take when placed over project tree (60% by default);
+* **Fixed** package crash when a new window opened with the `Over project tree` tabs placement chosen (tabs may blink while waiting for the project tree pane since it's hidden in new windows by default);
+* **Fixed** problems with scrolling when tabs don't fit the screen and switching tabs by scrolling option is enabled;
 
 #### 2.1.1 (09 Nov 2017)
-* Added scrollbar for tabs when they don't fit the screen.
+* **Fixed:** Scrollbar didn't show tabs when they don't fit the screen.
 
 ## 2.1.0 (09 Nov 2017)
-* Added an ability to customize tab height and intends manually;
-* Fixed bugs with shrinking tabs down to 0px with the `Over project tree` tabs placement chosen.
+* **Added** an ability to customize tab height and intends manually;
+* **Fixed** bugs with shrinking tabs down to 0px with the `Over project tree` tabs placement chosen.
 
 ## 2.0.0 (08 Nov 2017)
 * Completely rewritten styles and code, still based on the original tiger4th's package;

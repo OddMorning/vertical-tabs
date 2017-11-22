@@ -12,8 +12,7 @@
     "tabs",
     "scroll",
     "vertical",
-    "over tree",
-    "over tree-view"
+    "tree-view"
   ],
   "repository": "https://github.com/OddMorning/vertical-tabs-plus",
   "license": "MIT",

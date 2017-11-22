@@ -1,5 +1,5 @@
 # Vertical Tabs Plus package
-Makes tabs vertical. Fork from tiger4th's vertical-tabs package.
+Makes tabs vertical. Fork from [tiger4th's vertical-tabs package](https://atom.io/packages/vertical-tabs).
 
 ## Features
 
@@ -7,7 +7,7 @@ Makes tabs vertical. Fork from tiger4th's vertical-tabs package.
 Move cursor over tabs and switch between them using scroll wheel. Inspired by the same named option of the Vivaldi browser.
 
 ### Tabs placement: left, right, above project tree
-Tabs can be placed on either left or right side of the main pane. It's also possible to shelter them above the project tree view not to waste much space (inspired by Adobe Brackets interface).
+Tabs can be placed on either left or right side of the main pane. It's also possible to shelter them above the project tree not to make it waste much space. Inspired by Adobe Brackets interface.
 
 ### Customizable tab width and height
 Vertical tabs are not hosintal tabs so it makes sense to adjust their sizes manually. When Atom 1.17 has been released, the default theme ("One") got tiny tabs. Some people liked it, some were looking for the way to bring spacious tabs back and made a number of custom styles. One more reason why this option is more important than it seems :)  
@@ -20,9 +20,9 @@ There are too many changes for a single pull request but it's still based on the
 
 The difference from the original package:
 * Works well with "Material" theme, other themes shouldn't break it either (at the time of development is tested with "[One](https://atom.io/themes/one-light-ui)", "[Nord](https://atom.io/themes/nord-atom-ui)", and "[Material](https://atom.io/themes/atom-material-ui)");
-* No missing or extra borders (in case if you care about interface up to 1px lines);
 * Replaced fixed tabs width with `min` and `max` values;
-* Customizable tab height;
+* Can be placed over the project tree for sake of saving space;
+* Customizable tab properties (width, height, and intends);
 * Extra features.
 
 ## Why 2.0.0, not 0.1.0?
@@ -32,9 +32,8 @@ npm ERR! Command failed: git -c core.longpaths=true tag v0.1.0 -am Prepare 0.1.0
 npm ERR! fatal: tag 'v0.1.0' already exists
 ```
 
-## Known bugs:
-* When sorting tabs, they try to be placed _above_ a tab under the cursor if the cursor is over left side of tab container. As they try to be placed _under_ a tab for the right tab container side. It's natural behavior for horizontal tabs but looks weird for vertical one. Sadly it's a not fixable problem;
-* When `Fix Tooltips Placement` is enabled, tooltips still can be displayed at the old position when you quickly move the cursor over new tabs. That's because they display too quick, right before this package changes their placement value from `bottom` to `left` or `right`. It's possible to render own tooltips but it's impossible to prevent originall ones from displaying. So that problem also looks untreatable.
+## Known problems:
+* When dragging tabs, the tab placeholder is displayed _above_ a tab if cursor is over left side of tab container. As it's displayed _below_ a tab for the right tab container side. It's natural behavior for horizontal tabs but looks weird for vertical ones. Sadly it's a not fixable problem.
 
 ## Screenshots
 Tabs on the left side:
