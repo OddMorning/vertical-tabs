@@ -8,6 +8,8 @@
   --max-tab-width: 14.1em;
   --max-tab-container-height: 60%;
   --tab-padding-multiplier: 4;
+  
+  --intend-between-wrappers: .5em;
 
   // Left sided tabs
   &[data-tabs-position="left"] {
@@ -27,8 +29,25 @@
   
   // When tabs are placed over tree-view
   &.tree-view {
+    // Support max tab wrapper height for multiple panes via grids and some JS
+    // "wrappers-count" of first elements have "tab-height" minimal height, and the last element (project tree) has reversed "max-tab-container-height" min height (e.g 40% for value == '60%').
+    display: grid;
+    grid-template-rows: ~'
+      repeat(
+        var(--wrappers-count),
+        minmax(
+          calc(var(--tab-height) + var(--intend-between-wrappers)),
+          min-content)
+        )
+      minmax(calc(100% - var(--max-tab-container-height)), 1fr)
+    ';
+
+    // It's strange but tabs won't want to become narrower with any other value that this.
+    grid-template-columns: minmax(0, 1fr); 
+  
     // Not to make them scroll with tree-view together
     overflow: hidden;
+    
     .tree-view-root {
       overflow: auto;
     }
@@ -37,20 +56,15 @@
     &.tree-view-emulation {
       overflow: visible;
     }
-
-    // Limiting tab container height not to make tabs take all the space
-    .vtabs-wrapper {
-      max-height: var(--max-tab-container-height);
-      
-      // A separator between tab containers (when window has splitted panes)
-      + .vtabs-wrapper {
-        border-top: 1px solid @tab-border-color;
-      }
+    
+    // A separator between tab containers (when window has splitted panes)
+    .vtabs-wrapper + .vtabs-wrapper {
+      border-top: 1px solid @tab-border-color;
     }
 
     // Tab container
     .tab-bar {
-      padding: .5em 0;
+      padding: var(--intend-between-wrappers) 0;
       .tab {
         // Removes lines between tabs
         box-shadow: none;
@@ -63,10 +77,9 @@
     max-width: var(--max-tab-width);
   }
   
-  // Doesn't allow to collapse tabs when are placed over tree-view
+  // Adds a scrollbar when tabs are placed over tree-view
   .vtabs-wrapper {
     overflow-y: auto;
-    flex-shrink: 0; 
   }
 
   // Tab container
@@ -85,6 +98,9 @@
       // No limits set by themes
       min-width: initial;
       max-width: none;
+      
+      // Originally is needed for more comfy way to close horizontal tabs. Is useless for vertical tabs. Max width doesn't break vertical tabs but it constantly resets scroll position when tabs are inside of a grid. Like you scroll tabs, move your cursor and they instantly scroll to the top which really annoys. So this !important property is really needed.
+      max-width: none !important;
     
       border-left: none; // A separator between tabs, is actual for horizontal tabs only.
       width: 100%; // Tab antishrinker :D

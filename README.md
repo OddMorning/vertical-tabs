@@ -34,6 +34,7 @@ npm ERR! fatal: tag 'v0.1.0' already exists
 
 ## Known problems:
 * When dragging tabs, the tab placeholder is displayed _above_ a tab if cursor is over left side of tab container. As it's displayed _below_ a tab for the right tab container side. It's natural behavior for horizontal tabs but looks weird for vertical ones. Sadly it's a not fixable problem.
+* When tabs are placed over project tree, a new window is created, and the "Reopen project" menu is used, both tabs and project tree just disappear. Atom throws an uncaught error that says `The workspace can only contain one instance of item [object Object]`. Technically it has nothing related to this package so I can't even catch or trace that error. If that happened to you and the project tree disappeared, just press `Ctrl / Cmd`+`Shift`+`F5` or enter "window reload" in the command palette.
 
 ## Screenshots
 Tabs on the left side:

@@ -1,7 +1,10 @@
 # Changelog
 
+#### 2.3.4 (24 Nov 2017)
+* **Fixed:** Max tab container height didn't work properly with multiple panes.
+
 #### 2.3.3 (22 Nov 2017)
-* **Improved:** `Fix Tooltips Placement` doesn't show tooltips in wrong direction. This option looks more or less stable now;
+* **Improved:** `Fix Tooltips Placement` doesn't show tooltips in wrong direction anymore. This option looks more or less stable now;
 * **Improved:** Better changelog design.
 
 #### 2.3.2 (21 Nov 2017)
