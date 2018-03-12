@@ -1,5 +1,8 @@
 # Changelog
 
+#### 2.3.5 (12 Mar 2018)
+* **Fixed:** The package didn't process error properly in case of failed attaching tabs to project tree
+
 #### 2.3.4 (24 Nov 2017)
 * **Fixed:** Max tab container height didn't work properly with multiple panes.
 
