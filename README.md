@@ -1,12 +1,12 @@
 # Vertical Tabs Plus package
-Makes tabs vertical. Fork from [tiger4th's vertical-tabs package](https://atom.io/packages/vertical-tabs).
+Makes tabs vertical and adds some extra features. Fork from [tiger4th's vertical-tabs package](https://atom.io/packages/vertical-tabs).
 
 ## Features
 
 ### Switch tabs by scrolling
 Move cursor over tabs and switch between them using scroll wheel. Inspired by the same named option of the Vivaldi browser.
 
-### Tabs placement: left, right, above project tree
+### Tabs placement: left, right, embedded (above project tree)
 Tabs can be placed on either left or right side of the main pane. It's also possible to shelter them above the project tree not to make it waste much space. Inspired by Adobe Brackets interface.
 
 ### Customizable tab width and height
@@ -34,7 +34,6 @@ npm ERR! fatal: tag 'v0.1.0' already exists
 
 ## Known problems:
 * When dragging tabs, the tab placeholder is displayed _above_ a tab if cursor is over left side of tab container. As it's displayed _below_ a tab for the right tab container side. It's natural behavior for horizontal tabs but looks weird for vertical ones. Sadly it's a not fixable problem.
-* When tabs are placed over project tree, a new window is created, and the "Reopen project" menu is used, both tabs and project tree just disappear. Atom throws an uncaught error that says `The workspace can only contain one instance of item [object Object]`. Technically it has nothing related to this package so I can't even catch or trace that error. If that happened to you and the project tree disappeared, just press `Ctrl / Cmd`+`Shift`+`F5` or enter "window reload" in the command palette.
 
 ## Screenshots
 Tabs on the left side:
