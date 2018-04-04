@@ -1,7 +1,7 @@
 {
   "name": "vertical-tabs-plus",
   "main": "./lib/vertical-tabs-plus",
-  "version": "2.3.5",
+  "version": "2.4.0",
   "description": "Makes tabs vertical that can also be placed over project tree panel. Fork of the tiger4th's vertical-tabs package",
   "styles": [
     "./styles/main.less",
