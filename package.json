@@ -12,6 +12,7 @@
     "tabs",
     "scroll",
     "vertical",
+    "embedded",
     "tree-view"
   ],
   "repository": "https://github.com/OddMorning/vertical-tabs-plus",
