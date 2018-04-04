@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.4.0 (04 Apr 2018)
+* **Added:** Click on file in project tree won't shift project tree down immediately when `Embedded` tab placement is chosen (similar to browser's behavior when tabs get closed). This allows to click a file twice to pin it (and it simply looks nice).
+
 #### 2.3.5 (12 Mar 2018)
 * **Fixed:** The package didn't process error properly in case of failed attaching tabs to project tree
 * Renamed "Over project tree" tabs placement into "embedded" placement

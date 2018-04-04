@@ -77,8 +77,9 @@
     max-width: var(--max-tab-width);
   }
   
-  // Adds a scrollbar when tabs are placed over tree-view
+  // Adds a scrollbar and smooth height change when tabs are placed over tree-view
   .vtabs-wrapper {
+    transition: height .25s;
     overflow-y: auto;
   }
 
